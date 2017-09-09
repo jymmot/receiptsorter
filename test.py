@@ -7,5 +7,3 @@ Image.open('images/receipt2.jpg').show()
 
 test = [[],[],[],[],[]]
 print len(test[3])
-
-food = ["a","a"
