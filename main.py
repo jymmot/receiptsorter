@@ -1,0 +1,3 @@
+
+RECEIPT = 'receipt.txt'
+
