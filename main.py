@@ -1,3 +1,0 @@
-
-RECEIPT = 'receipt.txt'
-
