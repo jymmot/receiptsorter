@@ -25,7 +25,46 @@ class Receipt:
                     except ValueError:          # If string after tel, ph or cont is actually not an integer
                         continue
 
-    def find_items(self):                       # Finds items with corresponding prices
+    def find_price(self):
+        change = False
+        amt_change = 1
+        costs = []
+        for x in range(0, len(self.words)):
+            for y in range(0, len(self.words[x])):
+                word = self.words[x][y]
+                if "change" in self.words[x][y].lower():
+                    change = True
+                    continue
+                try:
+                    if len(word) >= 3 and word[len(word)-3] == ".":
+                        if word[0:1] == "$":
+                            word = word[1:]
+                        costs.append(float(word))
+
+                except ValueError:
+                    continue
+        
+        if not change:
+            max_cost = str(max(costs))
+            while len(max_cost) - max_cost.index(".") < 3:
+                max_cost += "0"
+            return max_cost
+
+        else:
+            cost2 = costs[:costs.index(max(costs))]
+            max_cost = str(max(cost2))
+            while len(max_cost) - max_cost.index(".") < 3:
+                max_cost += "0"
+            return max_cost
+
+receipt = Receipt("receipt.txt")
+receipt.to_list()
+print receipt.find_phone()
+print receipt.find_price()
+
+
+
+''' def find_items(self):                       # Finds items with corresponding prices
         items = []
         temp_cost = None
         temp_name = None
@@ -47,10 +86,4 @@ class Receipt:
                     if len(self.words[x]) == 0 and any((c in self.words[x+1].lower()) for c in \
                     ["total", "tax", "cash", "change", "tip", "balance"]):
                         return items
-
-        return items
-
-receipt = Receipt("images/1.txt")
-receipt.to_list()
-print receipt.find_phone()
-print receipt.find_items()
+        return items'''
