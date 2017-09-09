@@ -1,0 +1,27 @@
+	Crabapples
+	NEIGHBORHOOD GRILL & BAR
+
+08/14/09			3:11 PM
+
+SERVER: ANNIE
+TABLE: 39
+CHK 7963
+
+CLAM CHOWDER BOWL 		8.75
+MOZZ STIX			12.99
+3 SUPER LUNCH COMBO		40.72
+UNSWT ICE TEA			5.75
+2 FTN SODA			9.50
+---------------------------------------
+Entry Mode: 		SWIPED
+Card Number: 		xxxxxxxxxxx6810
+Card Expires:  		XX/XX
+Card Type: 		AMEX
+
+Subtotal:			$77.71
+
+Tax:				7.68
+Amount due:			$85.39
+
+Tip			_______________
+Total			_______________
