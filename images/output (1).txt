@@ -1,0 +1,86 @@
+
+"Server: Jack
+Guests:2
+Side Pancake
+07/04/2011
+8:15 AM
+10028
+4.50
+SweetPotCake
+Side Bacon
+Orange Juice (2 63.00)
+Side Pancake
+3.00
+6.00
+4.00
+Blueberry Pancake
+Subtotal
+17.50
+Tax
+Total
+Ba lance Due
+1.33
+18.85
+18.85
+Check Out the New Menu!!!
+Our Chefs are Working Hard
+To Bring the Next Big
+Breakfast Creations to
+Tantalize Your Taste Buds!!!
+"
+"Server:"
+"Jack"
+"Guests:2"
+"Side"
+"Pancake"
+"07/04/2011"
+"8:15"
+"AM"
+"10028"
+"4.50"
+"SweetPotCake"
+"Side"
+"Bacon"
+"Orange"
+"Juice"
+"(2"
+"63.00)"
+"Side"
+"Pancake"
+"3.00"
+"6.00"
+"4.00"
+"Blueberry"
+"Pancake"
+"Subtotal"
+"17.50"
+"Tax"
+"Total"
+"Ba"
+"lance"
+"Due"
+"1.33"
+"18.85"
+"18.85"
+"Check"
+"Out"
+"the"
+"New"
+"Menu!!!"
+"Our"
+"Chefs"
+"are"
+"Working"
+"Hard"
+"To"
+"Bring"
+"the"
+"Next"
+"Big"
+"Breakfast"
+"Creations"
+"to"
+"Tantalize"
+"Your"
+"Taste"
+"Buds!!!"

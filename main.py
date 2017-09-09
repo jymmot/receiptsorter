@@ -4,8 +4,13 @@ class Receipt:
         self.filepath = filepath
 
     def to_list(self):
+        temp = []
         with open(self.filepath) as f:
             self.words = [line.split() for line in f]
+        for x in range(0, len(self.words)):
+            if not (len(self.words[x]) > 0 and self.words[x][0][0] == "\""):
+                temp.append(self.words[x])
+        self.words = temp
 
     def find_phone(self):                       # Finds phone number
         for x in range(0, len(self.words)):
@@ -14,10 +19,10 @@ class Receipt:
                     word = self.words[x][y]
                     if "/" in word:
                         continue
-                    if "-" in word or "." in word and len(self.words[x][y]) == 12:      # Niceties
+                    if ("-" in word or "." in word) and len(self.words[x][y]) == 12:      # Niceties
                         self.words[x][y] = word.replace(".", "-")
                     else:
-                        if len(self.words[x][y]) == 10:
+                        if not ("-" in word or "." in word) and len(self.words[x][y]) == 10:
                             self.words[x][y] = word[:3] + "-" + word[3:6] + "-" + word[6:]
                         else:
                             continue
@@ -27,8 +32,8 @@ class Receipt:
 
     def find_price(self):
         change = False
-        amt_change = 1
         costs = []
+        x_indices = []
         for x in range(3, len(self.words)):
             for y in range(0, len(self.words[x])):
                 word = self.words[x][y]
@@ -40,10 +45,10 @@ class Receipt:
                         if word[0] == "$":
                             word = word[1:]
                         costs.append(float(word))
-                        self.words[x].remove(word)
+                        x_indices.append(x)
                 except ValueError:
                     continue
-        
+
         if not change:
             max_cost = str(max(costs))
             while len(max_cost) - max_cost.index(".") < 3:
@@ -69,8 +74,6 @@ class Receipt:
     def list_word(self):
         word_list = []
         for x in range(0, len(self.words)):
-            if len(self.words[x]) > 0 and self.words[x][0][0] == "\"":
-                continue
             for y in range(0, len(self.words[x])):
                 word_list.append(self.words[x][y])
         return word_list
@@ -119,7 +122,7 @@ categories = [["restaurant", "grill", "poach", "steamed", "neighborhood", "cafe"
 "antiseptic", "medical", "prevention", "vitamin", "iron", "paracetamol", "painkiller", "sore", 
 "mylanta", "lozenges", "thermometer", "calamine", "gauze", "aspirin"]]
 
-receipt = Receipt("images/1.txt")
+receipt = Receipt("images/output.txt")
 receipt.to_list()
 print receipt.find_phone()
 print receipt.find_price()
